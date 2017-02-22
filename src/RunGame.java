@@ -8,10 +8,12 @@ String input ="";
 int count = 0;
 tictactoe.setCompare();
 tictactoe.getInstructions();
-while(tictactoe.winner() == false || tictactoe.winner() == false)
+while(tictactoe.winner() == false || tictactoe.winner() == false || tictactoe.tie() == false)
 {
+   
 if(count % 2 == 0)
 {
+   tictactoe.getInstructions();
 System.out.println("Player 1 Enter a move");
 input = scnr.next();
 
@@ -27,6 +29,11 @@ count++;
 }
 else
 {
+   if(tictactoe.tie() == true)
+   {
+      break;
+   }
+   tictactoe.getInstructions();
 System.out.println("Player 2 Enter a Move");
 input = scnr.next();
 
@@ -45,9 +52,13 @@ if(tictactoe.determineWinner() == "X")
 {
 System.out.println("The Winner of the Game Is Player 1" );
 }
-else
+else if (tictactoe.determineWinner() == "O")
 {
 System.out.println("The Winner of the Game is Player 2");
+}
+else
+{
+   System.out.println("It's a Tie!");
 }
 System.out.println("Thank you for Playing");
 }

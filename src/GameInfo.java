@@ -6,6 +6,8 @@ private int broken = 0;
 private String winner = " ";
 private int check = 0;
 private int compare[] = new int [9];
+private int tie = 0;
+private boolean t;
 
 public void getInstructions()
 {
@@ -15,7 +17,7 @@ System.out.println("-------------");
 System.out.println("ML | MM | MR");
 System.out.println("-------------");
 System.out.println("BL | BM | BR ");
-System.out.println("Use the letters displayed on the board to put either an 'X' or 'O' \n Player 1 Places the ‘X’  \n Player 2 the ‘O’ ");
+System.out.println("Use the letters displayed on the board to put either an 'X' or 'O' \nPlayer 1 Places the ‘X’  \nPlayer 2 the ‘O’ ");
 
 }
 public void setCompare()
@@ -175,6 +177,7 @@ if(RealGameBoard[count][count2] == 1)
 {
 GameBoard[count][count2] = "O";
 }
+
 }
 }
 System.out.println(GameBoard[0][0] + " | " + GameBoard[0][1] + " | " + GameBoard[0][2]);
@@ -182,7 +185,9 @@ System.out.println("-----------------");
 System.out.println(GameBoard[1][0] + " | " + GameBoard[1][1] + " | " + GameBoard[1][2]);
 System.out.println("-----------------");
 System.out.println(GameBoard[2][0] + " | " + GameBoard[2][1] + " | " + GameBoard[2][2]);
+System.out.println("\n");
 }
+
 public boolean winner()
 {
 
@@ -274,5 +279,25 @@ return false;
 public String determineWinner()
 {
 return winner;
+}
+public boolean tie()
+{
+   tie = 0;
+   for(int count =0; count < 3 ; count ++)
+   {
+      for( int columns = 0; columns < 3; columns ++)
+      {
+         tie = tie + RealGameBoard[count][columns]; 
+      }
+   }
+   if (tie >= 14)
+   {
+      t = true;
+}
+   else
+   {
+      t = false;
+   }
+   return t; 
 }
 }
