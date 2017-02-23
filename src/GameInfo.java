@@ -26,6 +26,13 @@ for(int count = 0;count< 9; count++)
 {
  compare[count] = -1;
 }
+for(int count = 0; count < 3; count++)
+{
+   for(int count2 = 0; count2 < 3; count2++)
+   {
+      GameBoard[count][count2] = "";
+   }
+}
 }
 public void convertToNumberO(String input)
 {
@@ -181,9 +188,9 @@ GameBoard[count][count2] = "O";
 }
 }
 System.out.println(GameBoard[0][0] + " | " + GameBoard[0][1] + " | " + GameBoard[0][2]);
-System.out.println("-----------------");
+System.out.println("--------");
 System.out.println(GameBoard[1][0] + " | " + GameBoard[1][1] + " | " + GameBoard[1][2]);
-System.out.println("-----------------");
+System.out.println("--------");
 System.out.println(GameBoard[2][0] + " | " + GameBoard[2][1] + " | " + GameBoard[2][2]);
 System.out.println("\n");
 }

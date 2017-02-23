@@ -7,12 +7,16 @@ GameInfo tictactoe = new GameInfo();
 String input ="";
 int count = 0;
 tictactoe.setCompare();
-tictactoe.getInstructions();
-while(tictactoe.winner() == false || tictactoe.winner() == false || tictactoe.tie() == false)
+
+while(tictactoe.winner() == false  || tictactoe.tie() == false)
 {
    
 if(count % 2 == 0)
 {
+   if(tictactoe.winner() == true)
+   {
+      break;
+   }
    tictactoe.getInstructions();
 System.out.println("Player 1 Enter a move");
 input = scnr.next();
@@ -30,6 +34,10 @@ count++;
 else
 {
    if(tictactoe.tie() == true)
+   {
+      break;
+   }
+   if(tictactoe.winner() == true)
    {
       break;
    }
